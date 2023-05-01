@@ -1,5 +1,3 @@
 <template lang="pug">
-div
-  Navbar
-  slot
+div Couponコード:1234
 </template>
