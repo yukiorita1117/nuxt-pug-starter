@@ -7,6 +7,9 @@ LazyCoupon(ref="show" v-if="show")
   div Count: {{ count }}
   button.Btn(@click="()=> inc()") increase
   button.Btn(@click="()=> dec()") descrease
+div TEST: {{ comment }}
+button.Btn(@click="()=> handleEditComment()") Edit
+
 </template>
 
 <script lang="ts" setup>
@@ -16,7 +19,10 @@ const handleClick = () => {
   show.value = !show.value;
 };
 
-const { count, inc, dec } = useCounter(100);
+const { count, comment, inc, dec, handleEditComment } = useCounter(
+  100,
+  'test test'
+);
 </script>
 
 <style lang="scss" scoped>
@@ -27,7 +33,6 @@ const { count, inc, dec } = useCounter(100);
 .Image {
   margin-top: 24px;
 }
-
 .Btn {
   width: 360px;
   margin-top: 24px;
