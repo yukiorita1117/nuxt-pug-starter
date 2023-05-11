@@ -1,5 +1,6 @@
 <template lang="pug">
 h1 Main Page
+h2 {{ $prefix('World!?') }}
 button(@click="handleClick") Coupon Get
 LazyCoupon(ref="show" v-if="show")
 .Wrapper
@@ -23,6 +24,8 @@ const { count, comment, inc, dec, handleEditComment } = useCounter(
   100,
   'test test'
 );
+
+const { $prefix } = useNuxtApp();
 </script>
 
 <style lang="scss" scoped>
